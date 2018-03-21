@@ -1,0 +1,209 @@
+// main.styl
+
+/**
+ * Default styles (mobile first)
+ * --------------------------------------------------------------------------
+ * Extra small devices [without postfix -xs] (portrait phones, less than 576px)
+ * No media query since this is the default
+ *
+ */
+
+/**
+ * Libs import
+ *
+ * Relative path to libs
+ * Default: '../lib/'
+ *
+ */
+
+$lib-path = '../lib/'
+
+@import $lib-path + '_reboot'
+@import $lib-path + '_visually-hidden'
+@import $lib-path + '_flex-grid-framework'
+
+
+
+/**
+ * Utils import
+ *
+ * Relative path to utils
+ * Default: './styl/'
+ *
+ */
+
+$util-path = './styl/'
+/*
+@import $util-path + '_variables'
+@import $util-path + '_mixins'
+*/
+
+
+/**
+ * Fonts import
+ *
+ * Relative path to font utils
+ * Default: './styl/'
+ *
+ */
+/*
+@import $util-path + '_font-faces'
+@import $util-path + '_google-fonts'
+*/
+
+/**
+ * Mobile Fix
+ * --------------------------------------------------------------------------
+ */
+
+body
+  overflow-x hidden
+
+/**
+ * Grid
+ * --------------------------------------------------------------------------
+ */
+
+.container
+  @extend $container
+
+.row
+  @extend $row
+
+for i in (1..flx-column_number)
+  .col-{i}
+    @extend $col-{i}
+
+
+/**
+ * Blocks
+ * --------------------------------------------------------------------------
+ */
+
+
+
+/**
+ * Media
+ * --------------------------------------------------------------------------
+ */
+
+/**
+ * Small
+ * --------------------------------------------------------------------------
+ * Small devices [-sm] (landscape phones, 576px and up)
+ *
+ */
+
+@media (min-width: 576px)
+
+  /**
+   * Grid
+   * ------------------------------------------------------------------------
+   */
+
+  .container
+    max-width 540px
+
+  for i in (1..flx-column_number)
+    .col-sm-{i}
+      @extend $col-{i}
+
+
+  /**
+   * Blocks
+   * ------------------------------------------------------------------------
+   */
+
+
+/**
+ * Medium
+ * --------------------------------------------------------------------------
+ * Medium devices [-md] (tablets, 768px and up)
+ *
+ */
+
+@media (min-width: 768px)
+
+  /**
+   * Grid
+   * ------------------------------------------------------------------------
+   */
+
+  .container
+    max-width 720px
+
+  for i in (1..flx-column_number)
+    .col-md-{i}
+      @extend $col-{i}
+
+
+  /**
+   * Blocks
+   * ------------------------------------------------------------------------
+   */
+
+
+
+/**
+ * Large
+ * --------------------------------------------------------------------------
+ * Large devices [-lg] (desktops, 992px and up)
+ *
+ */
+
+@media (min-width: 992px)
+
+  /**
+   * Grid
+   * ------------------------------------------------------------------------
+   */
+
+  .container
+    max-width 960px
+
+  for i in (1..flx-column_number)
+    .col-lg-{i}
+      @extend $col-{i}
+
+  /**
+   * Blocks
+   * ------------------------------------------------------------------------
+   */
+
+
+/**
+ * Extra large
+ * --------------------------------------------------------------------------
+ * Extra large devices [-xl] (large desktops, 1200px and up)
+ *
+ */
+
+@media (min-width: 1200px)
+
+  /**
+   * Grid
+   * ------------------------------------------------------------------------
+   */
+
+  .container
+    max-width 1140px
+
+  for i in (1..flx-column_number)
+    .col-xl-{i}
+      @extend $col-{i}
+
+  /**
+   * Blocks
+   * ------------------------------------------------------------------------
+   */
+
+
+/**
+ * Print [-print]
+ * --------------------------------------------------------------------------
+ * For printing
+ *
+ */
+/*
+@media print
+*/
