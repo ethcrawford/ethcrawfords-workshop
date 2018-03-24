@@ -33,10 +33,10 @@ $lib-path = '../lib/'
  */
 
 $util-path = './styl/'
-/*
+
 @import $util-path + '_variables'
 @import $util-path + '_mixins'
-*/
+
 
 
 /**
@@ -58,6 +58,8 @@ $util-path = './styl/'
 
 body
   overflow-x hidden
+  color $color-3
+
 
 /**
  * Grid
@@ -80,7 +82,61 @@ for i in (1..flx-column_number)
  * --------------------------------------------------------------------------
  */
 
+.page-header
+  display flex
+  padding-top make-rem(100)
+  padding-bottom @padding-top
+  padding-right make-rem(69)
+  padding-left @padding-right
+  background-color white
+  &__title
+    font-weight 600
+    font-size make-rem(24)
 
+
+.section-1
+  padding-top make-rem(190)
+  padding-bottom make-rem(240)
+  &__title
+    font-size make-rem(30)
+  &__title-heavy
+    text-decoration line-through
+    font-weight 800
+  &__title-light
+    font-weight 400
+  &__lead
+    font-size make-rem(18)
+    font-weight 400
+  &__title
+  &__lead
+    text-align center
+
+
+.section-2
+  position relative
+  padding-top make-rem(290)
+  padding-bottom make-rem(300)
+  &__title
+    font-size make-rem(30)
+    font-weight 800
+  &__lead
+    font-size make-rem(18)
+    font-weight 500
+  &__bg
+    background-color $color-17
+    position absolute
+    width 82.08333333333333%
+    top 0
+    left 0
+    bottom 0
+    z-index -10
+  &__menu
+    position absolute
+    background-color white
+    width 202px
+    height @width
+    bottom 0
+    right 0
 
 /**
  * Media

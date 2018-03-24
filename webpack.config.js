@@ -46,10 +46,10 @@ module.exports = function(env) {
       { output: { path: PATHS.buildDev } },
       common,
       pug.dev(),
-      // css.dev(),
-      // stylus.dev(),
-      extractCSS.css(),
-      extractCSS.stylus(),
+      css.dev(),
+      stylus.dev(),
+      // extractCSS.css(),
+      // extractCSS.stylus(),
       devserver()
     ]);
   }
