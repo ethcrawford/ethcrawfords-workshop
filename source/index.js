@@ -33,10 +33,11 @@ import '../lib/_visually-hidden.styl';
 import '../lib/_flex-grid-framework.styl';
 
 
-import './styl/_font-awesome-brands.styl';
-import './styl/_font-awesome-regular.styl';
-import './styl/_font-awesome-solid.styl';
-import './styl/_font-awesome.styl';
+import './styl/_google-fonts.styl'
+// import './styl/_font-awesome-brands.styl';
+// import './styl/_font-awesome-regular.styl';
+// import './styl/_font-awesome-solid.styl';
+// import './styl/_font-awesome.styl';
 
 
 import './main.styl';

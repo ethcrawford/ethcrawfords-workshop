@@ -1,0 +1,23 @@
+// _font-awesome-brands.styl
+
+/**
+ * Relative path to fonts
+ * Default: '../fonts/'
+ *
+ */
+$path = '../../fonts/'
+
+
+@font-face
+  font-family 'Font Awesome 5 Brands'
+  font-style normal
+  font-weight normal
+  src url($path + 'fa-brands-400.eot')
+  src url($path + 'fa-brands-400.eot?#iefix') format('embedded-opentype'),
+      url($path + 'fa-brands-400.woff2') format('woff2'),
+      url($path + 'fa-brands-400.woff') format('woff'),
+      url($path + 'fa-brands-400.ttf') format('truetype'),
+      url($path + 'fa-brands-400.svg#fontawesome') format('svg')
+
+.fab
+  font-family 'Font Awesome 5 Brands'

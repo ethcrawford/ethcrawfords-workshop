@@ -1,0 +1,213 @@
+
+/* Configs
+------------------------------------------------*/
+flx-max-width = 1110px
+flx-margin = 15px
+flx-padding = 15px
+flx-column_number = 12
+flx-column_width = (100% / flx-column_number) - 2 * flx-margin
+
+/*
+$arrayName = value0, value1, value2
+$arrayName[1] //value1
+*/
+$colFlexToggle = 'off'
+$arrayCol = 1 2 3 4 5 6 7 8 9 10 11 12
+$arrayColSm = 1 2 3 4 5 6 7 8 9 10 11 12
+$arrayColMd = 1 2 3 4 5 6 7 8 9 10 11 12
+$arrayColLg = 1 2 3 4 5 6 7 8 9 10 11 12
+$arrayColXl = 1 2 3 4 5 6 7 8 9 10 11 12
+
+
+
+$margin
+  margin-right flx-margin
+  margin-left @margin-right
+
+$padding
+  padding-right flx-padding
+  padding-left @padding-right
+
+// mixin
+make-container()
+  width 100%
+  margin-right auto
+  margin-left @margin-right
+  @extend $padding
+
+// extends the mixin :)
+.container
+  make-container()
+
+
+/* Row
+------------------------------------------------*/
+.row
+  margin-right -1 * flx-padding
+  margin-left @margin-right
+  display flex
+  flex-wrap wrap
+
+/* Columns
+------------------------------------------------*/
+
+// mixin
+make-column(width-factor)
+  if (width-factor is a 'unit')
+    width 100%
+    max-width floor((100% / flx-column_number * width-factor), 10)
+    flex 0 0 @max-width
+
+  if (number-of-cols == flex)
+    width 100%
+    max-width 100%
+    flex-basis 0
+    flex-grow 1
+
+  if (numbers-of-cols == auto)
+    max-width none
+    width auto
+    flex 0 0 auto
+
+  min-height 1px
+  position relative
+  @extend $padding
+/*
+// extends the mixin :)
+if $colFlexToggle == 'on'
+  .col-flex
+    make-column(flex)
+
+
+
+for i in $arrayCol
+  .col-{i}
+    make-column(i)
+
+@media (min-width: 576px)
+  for i in $arrayColSm
+    .col-sm-{i}
+      make-column(i)
+
+@media (min-width: 768px)
+  for i in $arrayColMd
+    .col-md-{i}
+      make-column(i)
+
+@media (min-width: 992px)
+  for i in $arrayColLg
+    .col-lg-{i}
+      make-column(i)
+
+@media (min-width: 1200px)
+  for i in $arrayColXl
+    .col-xl-{i}
+      make-column(i)
+*/
+// for media queries
+mq-col(number-of-cols)
+    width (number-of-cols * flx-column_width) + (((number-of-cols - 1) * 2) * flx-margin)
+
+/* Offset
+------------------------------------------------*/
+
+// mixin
+mq-offset(number-of-offset = 0)
+    margin-left (number-of-offset * flx-column_width) + (((number-of-offset - 1) * 2) * flx-margin) + (3 * flx-margin)
+
+// extends the mixin :)
+for i in (0..(flx-column_number - 1))
+    $offset-{i}
+        mq-offset(i)
+
+/* Flex Container
+------------------------------------------------*/
+
+// mixin
+mq-justify(content-value)
+    if (content-value == left)
+        -webkit-box-pack start
+        -webkit-justify-content flex-start
+        -ms-flex-pack start
+        justify-content flex-start
+
+    if (content-value == right)
+        -webkit-box-pack end
+        -webkit-justify-content flex-end
+        -ms-flex-pack end
+        justify-content flex-end
+
+    if (content-value == center)
+        -webkit-box-pack center
+        -webkit-justify-content center
+        -ms-flex-pack center
+        justify-content center
+
+    if (content-value == between)
+        -webkit-box-pack justify
+        -webkit-justify-content space-between
+        -ms-flex-pack justify
+        justify-content space-between
+
+    if (content-value == around)
+        -webkit-justify-content space-around
+        -ms-flex-pack distribute
+        justify-content space-around
+
+// extends the mixin :)
+$justify-left
+    mq-justify(left)
+
+$justify-right
+    mq-justify(right)
+
+$justify-center
+    mq-justify(center)
+
+$justify-between
+    mq-justify(between)
+
+$justify-around
+    mq-justify(around)
+
+/* Flex Itens
+------------------------------------------------*/
+
+// mixin
+mq-vertical-align(vertical-value)
+    if (vertical-value == top)
+        -webkit-box-align start
+        -webkit-align-items flex-start
+        -ms-flex-align start
+        align-items flex-start
+        -webkit-align-content flex-start
+        -ms-flex-line-pack start
+        align-content flex-start
+
+    if (vertical-value == middle)
+        -webkit-box-align center
+        -webkit-align-items center
+        -ms-flex-align center
+        align-items center
+        -webkit-align-content center
+        -ms-flex-line-pack center
+        align-content center
+
+    if (vertical-value == bottom)
+        -webkit-box-align end
+        -webkit-align-items flex-end
+        -ms-flex-align end
+        align-items flex-end
+        -webkit-align-content flex-end
+        -ms-flex-line-pack end
+        align-content flex-end
+
+// extends the mixin :)
+$vertical-align-top
+    mq-vertical-align(top)
+
+$vertical-align-middle
+    mq-vertical-align(middle)
+
+$vertical-align-bottom
+    mq-vertical-align(bottom)

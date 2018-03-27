@@ -23,7 +23,7 @@ Thumbs.db
 node_modules/
 
 # Output folders
-build/
+# build/
 # build/dev/
 # build/prod/
 # build/dev/fonts/
@@ -32,27 +32,27 @@ build/
 # build/prod/images/
 
 # Fonts
-fonts/
+# fonts/
 
 # Libs
-lib/
+# lib/
 
 # Images
-images/
+# images/
 # images/brand/
 # images/cache/
 # images/README.md
 # images/fa/
 
 # Source
-source/components/
-source/README.md
-source/pages/README.md
-source/pages/index/README.md
+# source/components/
+# source/README.md
+# source/pages/README.md
+# source/pages/index/README.md
 
 # Pug
-source/pug/README.md
-source/pug/
+# source/pug/README.md
+# source/pug/
 # source/pug/_analytics.pug
 # source/pug/_favicon.pug
 # source/pug/_link.pug
@@ -62,7 +62,7 @@ source/pug/
 # source/pug/_variables.pug
 
 # Stylus
-source/styl/
+# source/styl/
 # source/styl/_font-faces.styl
 # source/styl/_google-fonts.styl
 # source/styl/_font-faces.styl
