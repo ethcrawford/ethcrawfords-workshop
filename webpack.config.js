@@ -10,8 +10,6 @@ const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglify');
 const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
-const WriteFilePlugin = require('write-file-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 const PATHS = {
@@ -33,16 +31,6 @@ const common = merge([
       // new webpack.optimize.CommonsChunkPlugin({
       //   name: 'bundle'
       // }),
-      new WriteFilePlugin(),
-      new CopyWebpackPlugin(
-        [
-          { from: 'images/fa/', to: 'images/fa/' },
-          { from: 'fonts/', to: 'fonts/' }
-        ],
-        {
-          debug: 'debug'
-        }
-      ),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery'
@@ -59,10 +47,10 @@ module.exports = function(env) {
       { output: { path: PATHS.buildDev } },
       common,
       pug.dev(),
-      // css.dev(),
-      // stylus.dev(),
-       extractCSS.css(),
-       extractCSS.stylus(),
+      css.dev(),
+      stylus.dev(),
+      // extractCSS.css(),
+      // extractCSS.stylus(),
       devserver()
     ]);
   }

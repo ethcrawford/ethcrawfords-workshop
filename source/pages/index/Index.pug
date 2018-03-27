@@ -2,22 +2,22 @@
 extends ../../_base
 
 block title
-  | Index page
+  | Ethcrawfords Workshop
 
 block main
   //- Page Header
   header.page-header
     .container
       h1#Home.logo
-        div.logo__text
-          span.logo__first
-            | Ethcrawford
+        div
+          span.logo__one
+            | Ethcrawfords
 
-          span.logo__last
+          span.logo__two
             |  Workshop
 
-        .logo__caption
-          | Ничем не отличающийся
+      p.logo-caption
+        | Ничем не отличающийся
 
       nav
         h1.visually-hidden Главная навигация
@@ -49,19 +49,20 @@ block main
 
   //- Main Content
   main(role='main')
-    section.section
+    //- Section 0
+    section.section.section_first.section-bg
       .container
         a.anchor(href='#Intro')
           i.fas.fa-anchor(aria-hidden='true')
   
-        h1#Intro.title
+        h1#Intro.section__title
           | Intro...
   
         p
           | Да, да, страница полностью загрузилась. Все так и задумано. Давайте сосредоточимся на содержании
 
     //- Section 1
-    section.section
+    section.section.section-bg
       .container
         //- Header
         header
@@ -74,56 +75,60 @@ block main
           a.anchor(href='#Intro' title='Предыдущий раздел')
             i.fas.fa-level-up-alt(aria-hidden='true')
   
-          h1#ShortInfo.anchor-title
+          h1#ShortInfo.section__title
             | Быстрей, быстрей! Краткий обзор
-  
+
           p.caption
             | Инфо-концентрат
   
         //- Body
-        section.section
+        //- Subsection 1 in Section 1
+        section.subsection.subsection_first
           a.anchor(href='#ShortInfoWork')
             i.fas.fa-anchor(aria-hidden='true')
   
-          h1#ShortInfoWork.sec-3-sub-1__title
+          h1#ShortInfoWork.subsection__title
             | Про подряд
           p
             | Я конструирую интерфейс с помощью HTML, CSS и JS. За основу берется предоставленный заказчиком дизайн-макет. Другими словами, это перевод из JPG|PNG|PSD в HTML. Кто сказал верстка?
-  
-        section.section
+
+        //- Subsection 2 in Section 1
+        section.subsection
           a.anchor(href='#ShortInfoInteresting')
             i.fas.fa-anchor(aria-hidden='true')
   
-          h1#ShortInfoInteresting.sec-3-sub-1__title
+          h1#ShortInfoInteresting.subsection__title
             | Самое интересное
   
-          p
+          p.big-text
             | 140
-          p
+          p.big-text__caption
             | Именно столько рублей стоит час моей работы
-          p
+          p.big-text
             | 2000
-          p
+          p.big-text__caption
             | Во столько рублей вам обойдется средний лендинг
-          p
+          p.big-text
             | 30
-          p
+          p.big-text__caption
             | Столько часов я в среднем трачу на верстку лендинг пейдж
-  
-        section.section
+
+        //- Subsection 3 in Section 1
+        section.subsection
           a.anchor(href='#ShortInfoResult')
             i.fas.fa-anchor(aria-hidden='true')
   
-          h1#ShortInfoResult.sec-3-sub-1__title
+          h1#ShortInfoResult.subsection__title
             | И что в итоге?
           p
             | Вы получаете готовый интерфейс, обладающий логичной компоновкой, адаптирован под различные экраны устройств, устойчив при внесении в него дополнений и обладает оптимальным весом
-  
-        section.section
+
+        //- Subsection 4 in Section 1
+        section.subsection.subsection_last
           a.anchor(href='#ShortInfoImportant')
             i.fas.fa-anchor(aria-hidden='true')
   
-          h1#ShortInfoImportant.sec-3-sub-1__title
+          h1#ShortInfoImportant.subsection__title
             | Самое важное
           p
             | Работа выполняется по договору подряда ИП. Плата за работу осуществляется путем перевода средств на расчетный счет исполнителя. То есть мой
@@ -133,10 +138,10 @@ block main
             | Сколько, сколько? - калькулятор тридцати процентов. Скоро
   
     //- Section 2
-    section.section
+    section.section.section-bg
       .container
         //- Header
-        header
+        header.section__header
           a.anchor(href='#Details')
             i.fas.fa-anchor(aria-hidden='true')
   
@@ -146,7 +151,7 @@ block main
           a.anchor(href='#ShortInfo' title='Предыдущий раздел')
             i.fas.fa-level-up-alt(aria-hidden='true')
   
-          h1#Details.anchor-title
+          h1#Details.section__title
             | Не на столько быстрей! Подробный разбор
   
           blockquote
@@ -154,56 +159,60 @@ block main
               | Для тех, кто интересуется
 
         //- Summary
-        p
-          | Краткое содержание раздела
-        ol
-          li
-            a(href='#Pricing')
-              | Ценообразование
-          li
-            a(href='#ProcessControl')
-              | Легкость в управлении процессом разработки
-          li
-            a(href='#ContractWork')
-              | Работа по договору
-          li
-            a(href='#Officially')
-              | Официально
-          li
-            a(href='#Directly')
-              | Я выполняю работу один
-          li
-            a(href='#NecessaryMaterials')
-              | Необходимые материалы
-          li
-            a(href='#')
-              | Так что же необходимо?
-          li
-            a(href='#')
-              | Настройка сроков
-          li
-            a(href='#')
-              | Советы
-          li
-            a(href='#')
-              | Этапы верстки
+        .summary
+          p.summary__title
+            | Краткое содержание раздела
+
+          ol.summary__list
+            li.summary__item
+              a.summary__link(href='#Pricing')
+                | Ценообразование
+            li.summary__item
+              a.summary__link(href='#ProcessControl')
+                | Легкость в управлении процессом разработки
+            li.summary__item
+              a.summary__link(href='#ContractWork')
+                | Работа по договору
+            li.summary__item
+              a.summary__link(href='#Officially')
+                | Официально
+            li.summary__item
+              a.summary__link(href='#Directly')
+                | Я выполняю работу один
+            li.summary__item
+              a.summary__link(href='#NecessaryMaterials')
+                | Необходимые материалы
+            li.summary__item
+              a.summary__link(href='#WhatIsNecessary')
+                | Так что же необходимо?
+            li.summary__item
+              a.summary__link(href='#SettingDeadlines')
+                | Настройка сроков
+            li.summary__item
+              a.summary__link(href='#Advice')
+                | Советы
+            li.summary__item
+              a.summary__link(href='#Stages')
+                | Этапы верстки
   
         //- Body
         //- Subsection 1 in Section 2
-        section
-          header
+        section.subsection.subsection_first
+          //- Header
+          header.subsection__header
             a.anchor(href='#Pricing')
               i.fas.fa-anchor(aria-hidden='true')
   
-            h1#Pricing
+            h1#Pricing.subsection__title
               | Ценообразование
   
           p
             | Не знаете как я считаю стоимость работы над проектом? Из почасовой ставки конечно! Теперь знаете. Но это еще не все. Сюда прибавляются и вычитаются различные нюансы работ. Скоро калькулятор ценообразования
   
         //- Subsection 2 in Section 2
-        section
-          header
+        section.subsection
+          //- Header
+          header.subsection__header
             a.anchor(href='#ProcessControl')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -218,9 +227,9 @@ block main
             | Если вы знаете или имеете представление какая работа происходит на этапе &#34;верстки&#34;, то вы можете задать более тонкие настройки этого процесса. Например выбрать то, в каком виде проект будет предоставлен вам по завершению. В другом случае, я сделаю все на свое усмотрение. Вам стоит волноваться об этом только если вы хотите получить код в каком-то ином виде, отличном от общего случая. Обратите внимание, что все это никак не повлияет на конечную цену, но вам будет необходимо в письменном виде согласовать со мной такие настройки. Это защитит нас обоих от недопонимания
   
         //- Subsection 3 in Section 2
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#ContractWork')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -236,9 +245,9 @@ block main
             | Договор дороже денег, потому что помогает их сохранить обеим сторонам. Я работаю только по договору подряда (такой договор после завершения работ передает заказчику полное право на использование программного продукта) и только напрямую (перевод денег на расчетный счет исполнителя). Если вы так не работали ранее, то попробуйте. В любом случае, я предоставлю вам все необходимые документы: договор подряда с техническим заданием, счет на оплату, акт выполненных работ
   
         //- Subsection 4 in Section 2
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Officially')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -254,9 +263,9 @@ block main
             | Моя деятельность зарегистрирована, имя внесено в реестр индивидуальных предпринимателей, а номер телефона находится в открытом доступе. Также у меня есть расчетный счет в банке. Что это значит? А то, что моя анонимность стремится к нулю и со мной можно безопасно работать
   
         //- Subsection 5 in Section 2
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Directly')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -272,9 +281,9 @@ block main
             | Я не нанимаю субподрядчиков и не передаю работу третьим лицам. Все детали проекта обсуждаются со мной лично и я связываюсь с вами если у меня возникают вопросы. Работа напрямую - это быстро, удобно и подконтрольно
   
         //- Subsection 6 in Section 2
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#NecessaryMaterials')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -290,9 +299,9 @@ block main
             | Для верстки мне потребуется как минимум большое изображение дизайна и как максимум нарезанный макет с исходниками картинок
   
         //- Subsection 7 in Section 2
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#WhatIsNecessary')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -304,9 +313,9 @@ block main
             | Из картинки верстать трудно, долго, дорого и неудобно. Стандарт для дизайн-макета это документ в формате PSD (Adobe Photoshop). Но безупречным решением, на самом деле, будет дополнительный снимок макета в формате изображения и архив использованных материалов. Что туда входит? Очень просто: файлы шрифтов, которые использовал дизайнер, полномасштабные исходные изображения до наложения фильтров и изменения размеров, иконки, возможно склеенные в спрайт или в формате SVG
   
         //- Subsection 8 in Section 2
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#SettingDeadlines')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -322,9 +331,9 @@ block main
             | Я трачу на разработку не более 7 часов в день без учета перерывов при стандартной нагрузке и работаю пять дней в неделю (не обязательно будних). Звонки принимаю в любое время. Когда я рассчитывая длительность работы над проектом , то отталкиваюсь от этих данных. Сроки могут меняться в зависимости от доработок или быть сжаты за дополнительную плату. Скоро калькулятор сроков
   
         //- Subsection 9 in Section 2
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Advice')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -342,9 +351,9 @@ block main
             | Почему я предлагаю? Очень просто - мне это интересно и я в этом разбираюсь. Я укажу вам на откровенно слабые места в контенте, неудобный дизайн, разного рода клише (как на многих, многих сайтах, и возможно у ваших конкурентов) и покажу как можно улучшить ситуацию и облегчить жизнь пользователей вашего приложения
   
         //- Subsection 10 in Section 2
-        section
+        section.subsection.subsection_last
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Stages')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -366,10 +375,10 @@ block main
   
   
     //- Section 3
-    section
+    section.section.section-bg
       .container
         //- Header
-        header
+        header.section__header
           a.anchor(href='#TechnicalDetails')
             i.fas.fa-anchor(aria-hidden='true')
   
@@ -379,7 +388,7 @@ block main
           a.anchor(href='#Details' title='Предыдущий раздел')
             i.fas.fa-level-up-alt(aria-hidden='true')
   
-          h1#TechnicalDetails
+          h1#TechnicalDetails.section__title
             | Для тех, кто в теме или как все работает
   
           blockquote
@@ -387,84 +396,86 @@ block main
               | Темная сторона проекта
 
         //- Summary
-        p
-          | Краткое содержание раздела
-        ol
-          li
-            a(href='#Build')
-              | Сборка проекта
-          li
-            a(href='#Code')
-              | Код
-          li
-            a(href='#Compression')
-              | Сжатие
-          li
-            a(href='#Linting')
-              | Проверка написания | Линтер
-          li
-            a(href='#Scope')
-              | Области видимости
-          li
-            a(href='#Compatibility')
-              | Совместимость
-          li
-            a(href='#ARIA')
-              | Html access aria
-          li
-            a(href='#Units')
-              | Единицы измерения
-          li
-            a(href='#Cutting')
-              | Подготовка макета
-          li
-            a(href='#Optimization')
-              | Оптимизация
-          li
-            a(href='#Outline')
-              | Аутлайн
-          li
-            a(href='#Grid')
-              | Сетка
-          li
-            a(href='#Adaptation')
-              | Адаптация
-          li
-            a(href='#RebootCSS')
-              | Сброс стилей
-          li
-            a(href='#Gzip')
-              | Сжатие gzip
-          li
-            a(href='#Fonts')
-              | Шрифты
-          li
-            a(href='#Images')
-              | Изображения
-          li
-            a(href='#Icons')
-              | Иконки
-          li
-            a(href='#Scripts')
-              | Скрипты
-          li
-            a(href='#OlderBrowsers')
-              | Старые браузеры
-          li
-            a(href='#RevealingUnseen')
-              | Открытие невидимого
-          li
-            a(href='#LightWeight')
-              | Легкость
+        .summary
+          p.summary__title
+            | Краткое содержание раздела
+
+          ol.summary__list
+            li.summary__item
+              a(href='#Build')
+                | Сборка проекта
+            li.summary__item
+              a.summary__link(href='#Code')
+                | Код
+            li.summary__item
+              a.summary__link(href='#Compression')
+                | Сжатие
+            li.summary__item
+              a.summary__link(href='#Linting')
+                | Проверка написания | Линтер
+            li.summary__item
+              a.summary__link(href='#Scope')
+                | Области видимости
+            li.summary__item
+              a.summary__link(href='#Compatibility')
+                | Совместимость
+            li.summary__item
+              a.summary__link(href='#ARIA')
+                | Html access aria
+            li.summary__item
+              a.summary__link(href='#Units')
+                | Единицы измерения
+            li.summary__item
+              a.summary__link(href='#Cutting')
+                | Подготовка макета
+            li.summary__item
+              a.summary__link(href='#Optimization')
+                | Оптимизация
+            li.summary__item
+              a.summary__link(href='#Outline')
+                | Аутлайн
+            li.summary__item
+              a.summary__link(href='#Grid')
+                | Сетка
+            li.summary__item
+              a.summary__link(href='#Adaptation')
+                | Адаптация
+            li.summary__item
+              a.summary__link(href='#RebootCSS')
+                | Сброс стилей
+            li.summary__item
+              a.summary__link(href='#Gzip')
+                | Сжатие gzip
+            li.summary__item
+              a.summary__link(href='#Fonts')
+                | Шрифты
+            li.summary__item
+              a.summary__link(href='#Images')
+                | Изображения
+            li.summary__item
+              a.summary__link(href='#Icons')
+                | Иконки
+            li.summary__item
+              a.summary__link(href='#Scripts')
+                | Скрипты
+            li.summary__item
+              a.summary__link(href='#OlderBrowsers')
+                | Старые браузеры
+            li.summary__item
+              a.summary__link(href='#RevealingUnseen')
+                | Открытие невидимого
+            li.summary__item
+              a.summary__link(href='#LightWeight')
+                | Легкость
 
         //- Body
         p
           | Следующие настройки процесса разработки могут быть заявлены заказчиком в письменном виде в специальном документе, согласованы и подписаны обеими сторонами. В противном случае разработка и сборка производятся по-умолчанию и на мое усмотрение
   
         //- Subsection 1 in Section 3
-        section
+        section.subsection.subsection_first
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Build')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -480,9 +491,9 @@ block main
             | Производится с помощью WebPack
   
         //- Subsection 2 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Code')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -500,9 +511,9 @@ block main
             | Возможность выбрать тип подключения js плагинов библиотек в том числе jquery. Будут ли они подключаться через CDN (общее хранилище) или включены в код проекта во время сборки. Во время разработки и сборки никакие библиотеки не модифицируются никоим образом. Ничего не добавляется, не дописывается, ничего не вырезается и не удаляется. Весь код библиотек идентичен коду из общего хранилища. Устанавливается с помощью менеджера пакетов yarn в отдельную директорию только для чтения. Так что этот параметр всего лишь вкусовщина подключения. По умолчанию код интегрируется в приложение
   
         //- Subsection 3 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Compression')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -522,9 +533,9 @@ block main
             | Также существуют source map (карта исходников). Файлы, которые хранят записи о том, каким код был до сжатия и открываются, например, в инспекторе браузера. Но на продакшене, как правило, тоже не нужны. Ну и наконец сжатый код можно разжать (нет не вручную), если очень хочется, специальным инструментом типа бьютифаер (от анг. beautify - улучшать внешний вид)
   
         //- Subsection 4 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Linting')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -540,9 +551,9 @@ block main
             | Во время написания исходных кодов работает линтер. Он проверяет соответствие кода заранее указанным стандартам и стилю. Таким образом и исходный и скопилированный коды выглядят однородно и их приятно поддерживать
   
         //- Subsection 5 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Scope')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -562,9 +573,9 @@ block main
             | Скоро можно будет выбирать между бэм и css modules. Но пока только bem умолчание
   
         //- Subsection 6 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Compatibility')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -584,9 +595,9 @@ block main
             | Разумеется это не дает мне права писать как зря. Я не использую как устаревшие и не рекомендуемые свойства, так и совсем новые, которые едва прошли стандартизацию, а то еще и не попали в стандарт
 
         //- Subsection 7 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#ARIA')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -602,9 +613,9 @@ block main
             | Я использую его потому-что так надо (это дольше и дороже), но вы можете отказаться. Но я не советую отказываться потому что это необходимо в законченном продукте, как для автомобиля противотуманные фары
 
         //- Subsection 8 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Units')
               i.fas.fa-anchor(aria-hidden='true')
   
@@ -620,9 +631,9 @@ block main
             | Все размеры в процессе верстки указываются в типографских аналогах для веба - относительных единицах Em и Rem. С ними, при увеличении размера шрифта в браузере (не путать с zoom), верстка сохранит свои пропорции
 
         //- Subsection 9 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Cutting')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -638,9 +649,9 @@ block main
             | Если макет уже нарезан и подготовлен к верстке то это дешевле. Иначе я вырезаю необходимые элементы дизайна вручную в графическом редакторе
 
         //- Subsection 10 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Optimization')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -656,9 +667,9 @@ block main
             | Пиксельные отклонения в несколько пикселей не воспроизводятся
 
         //- Subsection 11 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Outline')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -674,9 +685,9 @@ block main
             | Я добавляю невидимые для глаз заголовки в тех местах, где они должны быть, но не предусмотрены в дизайне. Содержимое на странице (в логике) выглядит как книга, с ее главами, разделами и подразделами. Но визуально это может быть совсем не так. Поэтому я использую инструмент аутлайн, который показывает мне такую структуру
 
         //- Subsection 12 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Grid')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -696,9 +707,9 @@ block main
             | Если ваш дизайн построен без модульной сетки, то я признаю дизайн неоконченным и буду вынужден скорректировать все блоки по сетке. Это займет некоторое время и будет стоить денег
 
         //- Subsection 13 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Adaptation')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -714,9 +725,9 @@ block main
             | Если у вашего дизайна макет только под настольные компьютеры, то адаптировать под остальные устройства я буду на свое усмотрение, это займет больше времени и стоит дороже
 
         //- Subsection 14 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#RebootCSS')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -732,9 +743,9 @@ block main
             | Чтобы снизить различия в отображении элементов в различных браузерах я использую переработанный reboot.css от bootstrap 4 в Stylus. Нормализую только те элементы, которые присутствуют на странице, но могу включить в сборку весь сброс по требованию
 
         //- Subsection 15 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Gzip')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -746,9 +757,9 @@ block main
             | Скоро
 
         //- Subsection 16 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Fonts')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -766,9 +777,9 @@ block main
             | Если в вашем проекте присутствуют проприетарные (платные) шрифты, то они будут заменены на их бесплатные аналоги для веб. Например шрифт &#34;Proxima Nova&#34; будет заменен на &#34;Montserrat&#34;
 
         //- Subsection 17 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Images')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -784,9 +795,9 @@ block main
             | Изображения будут оптимизированы, если этого не сделал дизайнер, стандартными средствами графического редактора
 
         //- Subsection 18 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Icons')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -804,9 +815,9 @@ block main
             | Это не касается иконочных шрифтов. Требования к ним такие же как к обычным шрифтам
 
         //- Subsection 19 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#Scripts')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -822,9 +833,9 @@ block main
             | Скрипты пишутся либо на чистом JS, либо с использованием библиотеки JQuery и плагинов. Умолчания тут нет, все зависит от проекта. Скоро будет возможность написать и на ES6. В том смысле, что вы можете заказать исходный код на ES6, так как он все еще будет скомпилирован в ES5
 
         //- Subsection 20 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#OlderBrowsers')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -841,9 +852,9 @@ block main
             | Но если вам необходима поддержка такого рода браузеров (например в компании такие еще используются) то за дополнительную плату и время этот вопрос будет решен
 
         //- Subsection 21 in Section 3
-        section
+        section.subsection
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#RevealingUnseen')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -859,9 +870,9 @@ block main
             | Во время разметки страницы я вставляю некоторые секционные заголовки даже если их нет в дизайне. Это необходимо для логики разметки и экранных дикторов. В дизайне может присутствовать множество красивых (или не очень) элементов и секций с содержимым (текст) где по логике должен быть заголовок. Но его нет. Довольно часто дизайнеры занимаются больше артом, чем дизайном и забывают (или не знают) что содержимое сайта главнее, чем его подача. Как же быть? Эти заголовки невидимы для глаз, но их прекрасно читают экранные дикторы и поисковые роботы. И все счастливы. Я могу вам указать, какие заголовки были дописаны и скрыты от визуального просмотра, на тот случай, если вам захочется добавить их в дизайн который виден. Не добавлять такие заголовки я не могу, без них продукт будет незавершен
 
         //- Subsection 22 in Section 3
-        section
+        section.subsection.subsection_last
           //- Header
-          header
+          header.subsection__header
             a.anchor(href='#LightWeight')
               i.fas.fa-anchor(aria-hidden='true')
 
@@ -875,85 +886,330 @@ block main
           //- Body
           p
             | Во время сборки в проект включаются только те компоненты, которые используются в верстке. Это касается сброса стилей и модульной сетки. Например, если на странице нет таблиц, то сброс таблиц не применяется. Или если на странице есть только модули размером в три колонки, то остальные вариации не добавляются. Однако, вы возможно хотите включить в проект даже не используемые стили. Это не рекомендуется, но возможно
-  
+
+    //- Section 4
+    section.section.section-bg
+      .container
+        //- Header
+        header.section__header
+          a.anchor(href='#Contacts')
+            i.fas.fa-anchor(aria-hidden='true')
+
+          a.anchor(href='#TechnicalDetails' title='Предыдущий раздел')
+            i.fas.fa-level-up-alt(aria-hidden='true')
+
+          h1#Contacts.section__title
+            | Контакты
+
+          blockquote
+            p.caption
+              | Все в одном месте
+
+        //- Subsection 1 in Section 4
+        div.subsection.subsection_first
+          h2.subsection__title
+            | Общие
+          p
+            | Телефон - 
+            a(href='tel:+79995186514' title='Нажмите, чтобы позвонить')
+              | +7 (999) 518 65 14
+          p
+            | Email - 
+            a(href='mailto:ethcrawford@gmail.com' title='Нажмите, чтобы перейти в почтовый клиент')
+              | ethcrawford@gmail.com
+
+        //- Subsection 2 in Section 4
+        div.subsection
+          h2.subsection__title
+            | Месендеры
+          p Telegram - 
+            a(href='https://t.me/ethcrawford' title='Нажмите, чтобы связаться с помощью Telegram')
+              | ethcrawford
+          p
+            | Skype - 
+            a(href='skype:ethcrawford?chat' title='Нажмите, чтобы связаться с помощью Skype')
+              | ethcrawford
+
+        //- Subsection 3 in Section 4
+        div.subsection
+          h2.subsection__title
+            | Биржи фриланс работы
+          p
+            | Freelancehunt.com - 
+            a(href='https://freelancehunt.com/freelancer/ethcrawford.html', title='Нажмите, чтобы перейти на Freelancehunt.com')
+              | ethcrawford
+
+          p
+            | FL - 
+            a(href='https://www.fl.ru/users/ethcrawford/' title='Нажмите, чтобы перейти на FL')
+              | ethcrawford
+
+          p 
+            | Фрилансим - 
+            a(href='https://freelansim.ru/freelancers/ethcrawford' title='Нажмите, чтобы перейти на Фрилансим')
+              | ethcrawford
+
+          p
+            | Upwork - 
+            a(href='https://www.upwork.com/o/profiles/users/_~01f824b77c80225cfc/' title='Нажмите, чтобы перейти на Upwork')
+              | ethcrawford
+
+          p
+            | Freelancer.com - 
+            a(href='https://www.freelancer.com/u/ethcrawford' title='Нажмите, чтобы перейти на Freelancer.com')
+              | ethcrawford
+
+        //- Subsection 4 in Section 4
+        div.subsection.subsection_last
+          h2.subsection__title
+            | Сети
+          p GitHub - 
+            a(href='https://github.com/ethcrawford' title='Нажмите, чтобы перейти на GitHub')
+              | ethcrawford
+          p Twitter - 
+            a(href='https://twitter.com/ethcrawford' title='Нажмите, чтобы перейти в Twitter')
+              | ethcrawford
+
+    //- Section 5
+    section.section.section-bg
+      .container
+        //- Header
+        header.section__header
+          a.anchor(href='#Requisites')
+            i.fas.fa-anchor(aria-hidden='true')
+
+          h1#Requisites.section__title
+            | Реквизиты
+
+          blockquote
+            p.caption
+              | Тут все правильно и проверено, уверяю
+
+        //- Subsection 1 in Section 5
+        .subsection.subsection_first
+          h2.subsection__title
+            | Про меня
+
+          p
+            span.tooltip(title='Это мое настоящее имя') Зарегистрированное имя
+            | : ИП Москалец Богдан Александрович
+          p
+            abbr(title='Идентификационный Номер Налогоплатильщика') ИНН
+            | : 312335395197
+          p
+            abbr(title='Основной Государственный Регистрационный Номер Индивидуального Предпринимателя') ОГРНИП
+            | : 317312300056365
+          p
+            abbr(title='Код Причины Постановки на учет') КПП
+            | : 
+            a(href='http://nsovetnik.ru/ip/est_li_kpp_u_ip_i_nuzhen_li_on/' title='Ссылка на статью: Есть ли КПП у ИП и нужен ли он?')
+              | нет
+          p
+            span.tooltip(title='Адрес регистрации ИП. Он же мой текущий адрес проживания и прописки') Адрес
+            | : 308504, Белгородская обл., Белгородский р-н, мкр. Таврово 2-й, ул. Народная, д. 10, кв. -
+
+        //- Subsection 2 in Section 5
+        .subsection
+          h2.subsection__title
+            | Про мой банк
+
+          p
+            abbr(title='Расчетный счет') Р/с
+            | : 40802810400000221275
+          p
+            span.tooltip(title='Банк, где содержится расчетный счет') Банк
+            | : АО "ТИНЬКОФФ БАНК" г. МОСКВА
+          p
+            abbr(title='Банковский Идентификационный Код') БИК
+            | : 044525974
+          p
+            abbr(title='Корреспондентский счет') Корр/c
+            | : 30101810145250000974
+
+        //- Subsection 3 in Section 5
+        .subsection.subsection_last
+          h2.subsection__title
+            | Про коды деятельности
+          p
+            abbr(title='Общероссийский Классификатор Видов Экономической Деятельности') ОКВЭД
+            | : 14 видов экономической деятельности
+
+          ul
+            li
+              | 62.01 - [Основной] Разработка компьютерного программного обеспечения
+            li
+              | 74.30 - Деятельность по письменному и устному переводу
+            li
+              | 74.20 - Деятельность в области фотографии
+            li
+              | 74.10 - Деятельность специализированная в области дизайна
+            li
+              | 73.20 - Исследование конъюнктуры рынка и изучение общественного мнения
+            li
+              | 73.12 - Представление в средствах массовой информации
+            li
+              | 73.11 - Деятельность рекламных агентств
+            li
+              | 63.99 - Деятельность информационных служб прочая, не включенная в другие группировки
+            li
+              | 63.91 - Деятельность информационных агентств
+            li
+              | 63.12 - Деятельность web-порталов
+            li
+              | 63.11 - Деятельность по обработке данных, предоставление услуг по размещению информации и связанная с этим деятельность
+            li
+              | 62.09 - Деятельность, связанная с использованием вычислительной техники и информационных технологий, прочая
+            li
+              | 62.03 - Деятельность по управлению компьютерным оборудованием
+            li
+              | 62.02 - Деятельность консультативная и работы в области компьютерных технологий
+
+    //- Section 6
+    section.section.section-bg
+      .container
+        //- Header
+        header.section__header
+          a.anchor(href='#Contracts')
+            i.fas.fa-anchor(aria-hidden='true')
+
+          h1#Contracts.section__title
+            | Документы
+          p.caption Для ООО, ИП и Физического лица
+
+        //- Subsection 1 in Section 6
+        .subsection.subsection_first
+          h2
+            | Договор с техническим заданием
+
+          ul
+            li
+              a(href='https://docs.google.com/document/d/1weQ2TF50BW_0e944fQAXJ6fTmAHqcZ1_jy8WMb7A0ng/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Договор на выполнение работ по верстке сайта для ООО
+
+            li
+              a(href='https://docs.google.com/document/d/1jdrFEpZ17ewNKxhhu0iImTmtUFAcUSORu3lSyj4uZyI/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Договор на выполнение работ по верстке сайта для ИП
+
+            li
+              a(href='https://docs.google.com/document/d/1oG3S80euul_FWpoVoWiZFRSBAs0SmcnHytXrrUyzzLM/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Договор на выполнение работ по верстке сайта для ФЛ
+
+        //- Subsection 2 in Section 6
+        .subsection
+          h2
+            | Cчет на оплату работ
+
+          ul
+            li
+              a(href='https://docs.google.com/document/d/1orvI8JLxbVJLNC7_GUKXB3CuRfmVTHWSVv0M_gfbhIA/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Счет на оплату работ по верстке сайта для ООО
+
+            li
+              a(href='https://docs.google.com/document/d/1CKnvVVrVUvZJ6PsR-34qmhfPMUl6X5PbwRcoL-Aqpxk/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Счет на оплату работ по верстке сайта для ИП
+
+            li
+              a(href='https://docs.google.com/document/d/1dnH6jhSQI3hf8K8cceVGbjIdUYh__JEoaoR1HT8Y-V8/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Счет на оплату работ по верстке сайта для ФЛ
+
+        //- Subsection 3 in Section 6
+        .subsection
+          h2
+            | Акт выполненных работ
+
+          ul
+            li
+              a(href='https://docs.google.com/document/d/11opIA74X-G3Abp8e7k0kkmiZaCk9Ojj1_oI0x_PcHH8/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Акт выполненных работ по верстке сайта для ООО
+
+            li
+              a(href='https://docs.google.com/document/d/1xULZbpTTsrVyRbwg2koyD6-6nrWKK-j8D30psRN6Jzo/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Акт выполненных работ по верстке сайта для ИП
+
+            li
+              a(href='https://docs.google.com/document/d/12FislAtCxikRAmoqE1J_5dAxt0DEJPMkcjFOazzS8mY/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Акт выполненных работ по верстке сайта для ФЛ
+
+        //- Subsection 4 in Section 6
+        .subsection.subsection_last
+          h2
+            | Разное
+          p
+            | Пример настройки проекта - требуется для продвинутой настройки проекта, только для знающих
+          ul
+            li
+              a(href='https://docs.google.com/document/d/1j-zhELhf7wRV0b9ieDRkfqePSLbNEa4Pr3TK48uqp-w/edit?usp=sharing' title='Нажмите, чтобы перейти на Google Docs')
+                | Настройка параметров сборки проекта
+
   //- Main Content [END]
   div
-    a.to-top(href='#Home')
-      | Наверх
+    a.to-top(href='#app')
+      span
+        | Наверх
+
 
   //- Page Footer
   footer#PageFooter.page-footer
-    .container
-      h2#Contacts Контакты
-      p.caption Все в одном месте
-      div
-        h3 Общие
-        p Телефон - +7(999) 518 65 14
-        p Email - ethcrawford@gmail.com
+    //- Section 7
+    section.section.section_first
+      .container
+        //- Header
+        header.section__header
+          a.anchor(href='#Cooperation')
+            i.fas.fa-anchor(aria-hidden='true')
 
-      div
-        h3 Месендеры
-        p Telegram - username
-        p Skype  - username
-        p Hangouts  - username
+          h1#Cooperation.section__title
+            | Сотрудничество
+          p.caption
+            | Налаживаем связь
+        p
+          | Если вы дизайнер и вам нужен партнер верстальщик, то feel free писать мне на почту с предложением сотрудничества
 
-      div
-        h3 Биржи фриланс работы
-        p FL  - username
-        p Фрилансим  - username
-        p Upwork  - username
-        p Freelance.com  - username
+    //- Section 8
+    section.section
+      .container
+        //- Header
+        header.section__header
+          a.anchor(href='#Reviews')
+            i.fas.fa-anchor(aria-hidden='true')
 
-      div
-        h3 Сети
-        p GitHub  - username
-        p Twitter  - username
+          h1#Reviews.section__title
+            | Отзывы
+          p.caption Хотите отозваться?
 
-      h2#Requisites Реквизиты
-      p.caption Тут все правильно и проверено, уверяю
-      p Зарегистрированное имя - ИП Москалец Богдан Александрович
-      p ИНН - 312335395197
-      p ОГРНИП - 317312300056365
-      p КПП - нет
-      p ОКВЭД - 14 видов экономической деятельности
-      ul
-        li 62.01 [Основной] Разработка компьютерного программного обеспечения
-        li 74.30 Деятельность по письменному и устному переводу
-        li 74.20 Деятельность в области фотографии
-        li 74.10 Деятельность специализированная в области дизайна
-        li 73.20 Исследование конъюнктуры рынка и изучение общественного мнения
-        li 73.12 Представление в средствах массовой информации
-        li 73.11 Деятельность рекламных агентств
-        li 63.99 Деятельность информационных служб прочая, не включенная в другие группировки
-        li 63.91 Деятельность информационных агентств
-        li 63.12 Деятельность web-порталов
-        li 63.11 Деятельность по обработке данных, предоставление услуг по размещению информации и связанная с этим деятельность
-        li 62.09 Деятельность, связанная с использованием вычислительной техники и информационных технологий, прочая
-        li 62.03 Деятельность по управлению компьютерным оборудованием
-        li 62.02 Деятельность консультативная и работы в области компьютерных технологий
+        p
+          | Пишите мне на почту, если у вас есть замечания или вопросы после прочтения этой страницы. Мне будет приятно узнать с чем вы соглашаетесь в моем подходе к работе и любопытно что откровенно вам оказалось не по нраву и почему
 
-      h2#Contracts Документы
-      p Пример договора с техническим заданием для ооо ип физ лица
-      p Пример счета на оплату работы
-      p Пример акта выполненных работ для ооо ип физ лица
-      p Разное
-      p Пример настройки проекта - требуется для продвинутой настройки проекта только для знающих
-      p Пустой
-      p Заполненный
+    //- Section 9
+    section.section
+      .container
+        //- Header
+        header.section__header
+          a.anchor(href='#Signature')
+            i.fas.fa-anchor(aria-hidden='true')
 
-      h2 Сотрудничество
-      p.caption Налаживаем связь
-      p Если вы дизайнер и вам нужен партнер верстальщик, то feel free писать мне на почту с предложением сотрудничества
+          h1#Signature.section__title
+            | Подпись
+        p
+          | Создавая некоторые элементы &#34;дизайна&#34; я вдохновлялся подачей 
+          a(href='https://journal.tinkoff.ru/') Тинькофф Журнала
 
-      h2 Отзывы
-      p.caption Хотите отозваться?
-      p Пишите мне на почту, если у вас есть замечания или вопросы после прочтения этой страницы. Мне будет приятно узнать с чем вы соглашаетесь в моем подходе к работе и любопытно что откровенно вам оказалось не по нраву и почему
+        p Текст для сайта написан с помощью личного опыта и знаний полученных из книг по копирайтингу и маркетингу. А также дизайну интерфейсов и проектирования пользовательского взаимодействия. И еще очень много чего
 
-      h2 Подпись
-      p Создавая некоторые элементы дизайна я вдохновлялся подачей тинькофф журнал ссылка
-      p Текст для сайта написан с помощью личного опыта и знаний полученных из книг по копирайтингу и маркетингу. А также дизайну интерфейсов и проектирования пользовательского взаимодействия и еще очень много чего
-      p Идеи дизайна взяты отсюда
+    //- Section 10
+    div.section
+      .container
+        //- Header
+        header.section__header
+          a.anchor(href='#Copyright')
+            i.fas.fa-anchor(aria-hidden='true')
 
-      h2 Копирайт
-      p Все права на текст, находящийся на данном сайте, принадлежат автору. А автор я - Москалец Богдан, или под псевдонимом Ethcrawford. Кстати, псевдоним Ethcrawford тоже принадлежит мне.
-      img(src=require('../../../images/brand/Ethcrawford-logo-xs.png') alt='Логотип Ethcrawford. Псевдоним (Ethcrawford) зачеркнут, под ним подпись (Даже не спрашивай) неровно вписанные в квадрат')
+          h2#Copyright.section__title
+            | Копирайт
+
+        p
+          | Все права на текст, находящийся на данном сайте, принадлежат автору. А автор я - Москалец Богдан, или под псевдонимом Ethcrawford. Кстати, сам псевдоним Ethcrawford тоже принадлежит мне
+        p &copy; 2018
+        p Версия сайта: 0.4.14@beta
+
+        img.eth-logo(src=require('../../../images/brand/Ethcrawford-logo-xs.png') alt='Логотип Ethcrawford. Псевдоним (Ethcrawford) зачеркнут, под ним подпись (Даже не спрашивай) неровно вписанные в квадрат')
